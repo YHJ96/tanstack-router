@@ -4,6 +4,6 @@ function About() {
   return <div className="p-2">Hello from About!</div>;
 }
 
-export const Route = createFileRoute("/about")({
+export const Route = createFileRoute("/about/")({
   component: About,
 });
