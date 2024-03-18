@@ -4,7 +4,7 @@ import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 function Root() {
   return (
     <>
-      <nav className="p-2 flex gap-2">
+      <nav className="flex gap-2 p-2">
         <Link to="/" className="[&.active]:font-bold">
           Home
         </Link>
@@ -22,4 +22,12 @@ function Root() {
   );
 }
 
-export const Route = createRootRoute({ component: Root });
+// 404 최상단 배치
+function NotFound() {
+  return <p className="p-2">Not Found!!</p>;
+}
+
+export const Route = createRootRoute({
+  component: Root,
+  notFoundComponent: NotFound,
+});
